@@ -1,4 +1,10 @@
-﻿CREATE TABLE subdivision(
+﻿-- DROP TABLE property CASCADE;
+-- DROP TABLE city CASCADE;
+-- DROP TABLE county CASCADE;
+-- DROP TABLE elementary CASCADE;
+-- DROP TABLE subdivision CASCADE;
+
+CREATE TABLE subdivision(
   subdivision_id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL,
   hoa MONEY NOT NULL);
