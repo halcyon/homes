@@ -1,4 +1,5 @@
-﻿SELECT street_address,
+﻿SELECT id,
+       street_address,
        city.name AS city,
        zip,
        extended_zip,

@@ -1,7 +1,7 @@
 ﻿CREATE TABLE subdivision(
   subdivision_id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL,
-  hoa MONEY);
+  hoa MONEY NOT NULL);
 
 CREATE TABLE elementary(
   elementary_id SERIAL PRIMARY KEY,
