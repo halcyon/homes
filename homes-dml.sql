@@ -1,7 +1,8 @@
+INSERT INTO city (name) VALUES ('Johns Creek');
+INSERT INTO county (name) VALUES ('Fulton');
 INSERT INTO subdivision (name, hoa) VALUES ('Lonestar Village', 500);
 INSERT INTO elementary (name) VALUES ('Beavis Elementary');
-INSERT INTO county (name) VALUES ('Fulton');
-INSERT INTO city (name) VALUES ('Johns Creek');
+
 INSERT INTO property (street_address,city_id,zip,extended_zip,county_id,subdivision_id,elementary_id,asking,recently_sold,last_sold,year_last_sold,year_built,square_feet,acres,stars_j,stars_b)
   VALUES (
   '1422 Columbus Ave',

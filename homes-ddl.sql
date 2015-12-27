@@ -4,6 +4,14 @@
 -- DROP TABLE elementary CASCADE;
 -- DROP TABLE subdivision CASCADE;
 
+CREATE TABLE city(
+  city_id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL);
+
+CREATE TABLE county(
+  county_id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL);
+
 CREATE TABLE subdivision(
   subdivision_id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL,
@@ -13,20 +21,8 @@ CREATE TABLE elementary(
   elementary_id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL);
 
-CREATE TABLE county(
-  county_id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL);
-
-CREATE TABLE city(
-  city_id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL);
-
 CREATE TABLE property(
   id SERIAL PRIMARY KEY,
-  asking MONEY NOT NULL,
-  recently_sold MONEY NOT NULL,
-  last_sold MONEY NOT NULL,
-  year_last_sold INTEGER NOT NULL,
   street_address TEXT NOT NULL,
   city_id INTEGER REFERENCES city(city_id),
   zip INTEGER NOT NULL,
@@ -34,6 +30,10 @@ CREATE TABLE property(
   county_id INTEGER REFERENCES county(county_id),
   subdivision_id INTEGER REFERENCES subdivision(subdivision_id),
   elementary_id INTEGER REFERENCES elementary(elementary_id),
+  asking MONEY NOT NULL,
+  recently_sold MONEY NOT NULL,
+  last_sold MONEY NOT NULL,
+  year_last_sold INTEGER NOT NULL,
   year_built INTEGER NOT NULL,
   square_feet INTEGER NOT NULL,
   acres REAL NOT NULL,
