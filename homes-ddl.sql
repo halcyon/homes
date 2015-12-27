@@ -1,29 +1,27 @@
-﻿-- DROP TABLE property CASCADE;
--- DROP TABLE city CASCADE;
--- DROP TABLE county CASCADE;
--- DROP TABLE elementary CASCADE;
--- DROP TABLE subdivision CASCADE;
+﻿-- DROP TABLE property, city, county, elementary, subdivision CASCADE;
+
+CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
 
 CREATE TABLE city(
   city_id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL);
+  name CITEXT UNIQUE NOT NULL);
 
 CREATE TABLE county(
   county_id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL);
+  name CITEXT UNIQUE NOT NULL);
 
 CREATE TABLE subdivision(
   subdivision_id SERIAL PRIMARY KEY,
-  name TEXT UNIQUE NOT NULL,
+  name CITEXT UNIQUE NOT NULL,
   hoa MONEY NOT NULL);
 
 CREATE TABLE elementary(
   elementary_id SERIAL PRIMARY KEY,
-  name TEXT UNIQUE NOT NULL);
+  name CITEXT UNIQUE NOT NULL);
 
 CREATE TABLE property(
   id SERIAL PRIMARY KEY,
-  street_address TEXT NOT NULL,
+  street_address CITEXT NOT NULL,
   city_id INTEGER REFERENCES city(city_id),
   zip INTEGER NOT NULL,
   extended_zip INTEGER,
