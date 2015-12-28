@@ -8,7 +8,7 @@
        hoa,
        elementary.name AS elementary,
        asking,
-       recently_sold,
+       comp,
        last_sold,
        year_last_sold,
        year_built,
