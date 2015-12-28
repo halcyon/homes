@@ -29,7 +29,7 @@ CREATE TABLE property(
   subdivision_id INTEGER REFERENCES subdivision(subdivision_id),
   elementary_id INTEGER REFERENCES elementary(elementary_id),
   asking MONEY NOT NULL,
-  recently_sold MONEY NOT NULL,
+  comp MONEY NOT NULL,
   last_sold MONEY NOT NULL,
   year_last_sold INTEGER NOT NULL,
   year_built INTEGER NOT NULL,
